@@ -18,7 +18,7 @@ class APIClient {
         }
     }
 
-    static func getInformation(completion:@escaping (AFResult< [SampleModel]>)->Void) {
+    static func getInformation(completion:@escaping (AFResult< [Data]>)->Void) {
         performRequest(route: APIRouter.information, completion: completion)
     }
 

@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C3046A82856E261000145C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3046A72856E261000145C5 /* RegisterViewController.swift */; };
+		4C3046A82856E261000145C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3046A72856E261000145C5 /* SignUpViewController.swift */; };
 		4CC5985C28532A12009E85F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5985B28532A12009E85F9 /* Constants.swift */; };
 		4CC5985E28532A6C009E85F9 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5985D28532A6C009E85F9 /* APIRouter.swift */; };
 		4CC5986028532AFB009E85F9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5985F28532AFB009E85F9 /* APIClient.swift */; };
-		4CC59862285330F8009E85F9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59861285330F8009E85F9 /* Extension.swift */; };
+		4CC59862285330F8009E85F9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59861285330F8009E85F9 /* Validation.swift */; };
 		4CC5986428533190009E85F9 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5986328533190009E85F9 /* Managers.swift */; };
+		4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2973E285709E800274F57 /* UITextField+Extensions.swift */; };
+		4CD2974128570AE000274F57 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2974028570AE000274F57 /* SampleData.swift */; };
 		4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB42852D34D00845A61 /* AppDelegate.swift */; };
 		4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */; };
-		4CF2EDB92852D34D00845A61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB82852D34D00845A61 /* LoginViewController.swift */; };
+		4CF2EDB92852D34D00845A61 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB82852D34D00845A61 /* SignInViewController.swift */; };
 		4CF2EDBC2852D34D00845A61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2EDBA2852D34D00845A61 /* Main.storyboard */; };
 		4CF2EDBE2852D34F00845A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2EDBD2852D34F00845A61 /* Assets.xcassets */; };
 		4CF2EDC12852D34F00845A61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2EDBF2852D34F00845A61 /* LaunchScreen.storyboard */; };
@@ -23,7 +25,7 @@
 		4CF2EDD62852D34F00845A61 /* TestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDD52852D34F00845A61 /* TestProjectUITests.swift */; };
 		4CF2EDD82852D34F00845A61 /* TestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDD72852D34F00845A61 /* TestProjectUITestsLaunchTests.swift */; };
 		4CF2EDEA2852DA0D00845A61 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDE92852DA0D00845A61 /* Alamofire */; };
-		4CF2EDEC2852DEC300845A61 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDEB2852DEC300845A61 /* SampleModel.swift */; };
+		4CF2EDEC2852DEC300845A61 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDEB2852DEC300845A61 /* Data.swift */; };
 		4CF2EDF12852F0E300845A61 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF02852F0E300845A61 /* MBProgressHUD */; };
 		4CF2EDF42852F1C000845A61 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF32852F1C000845A61 /* SwiftKeychainWrapper */; };
 		4CF2EDF72852F27B00845A61 /* TTGSnackbar in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF62852F27B00845A61 /* TTGSnackbar */; };
@@ -47,16 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C3046A72856E261000145C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4C3046A72856E261000145C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4CC5985B28532A12009E85F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4CC5985D28532A6C009E85F9 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		4CC5985F28532AFB009E85F9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		4CC59861285330F8009E85F9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		4CC59861285330F8009E85F9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4CC5986328533190009E85F9 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
+		4CD2973E285709E800274F57 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		4CD2974028570AE000274F57 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		4CF2EDB12852D34D00845A61 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDB42852D34D00845A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CF2EDB82852D34D00845A61 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4CF2EDB82852D34D00845A61 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4CF2EDBB2852D34D00845A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF2EDBD2852D34F00845A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF2EDC02852D34F00845A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		4CF2EDD12852D34F00845A61 /* TestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDD52852D34F00845A61 /* TestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITests.swift; sourceTree = "<group>"; };
 		4CF2EDD72852D34F00845A61 /* TestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4CF2EDEB2852DEC300845A61 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
+		4CF2EDEB2852DEC300845A61 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +112,8 @@
 		4C3046A22856C173000145C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4CF2EDB82852D34D00845A61 /* LoginViewController.swift */,
-				4C3046A72856E261000145C5 /* RegisterViewController.swift */,
+				4CF2EDB82852D34D00845A61 /* SignInViewController.swift */,
+				4C3046A72856E261000145C5 /* SignUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +187,8 @@
 		4CF2EDE52852D6B700845A61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4CF2EDEB2852DEC300845A61 /* SampleModel.swift */,
+				4CF2EDEB2852DEC300845A61 /* Data.swift */,
+				4CD2974028570AE000274F57 /* SampleData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,7 +196,8 @@
 		4CF2EDF82852F35300845A61 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				4CC59861285330F8009E85F9 /* Extension.swift */,
+				4CC59861285330F8009E85F9 /* Validation.swift */,
+				4CD2973E285709E800274F57 /* UITextField+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -340,15 +346,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC5985E28532A6C009E85F9 /* APIRouter.swift in Sources */,
-				4C3046A82856E261000145C5 /* RegisterViewController.swift in Sources */,
-				4CF2EDB92852D34D00845A61 /* LoginViewController.swift in Sources */,
+				4C3046A82856E261000145C5 /* SignUpViewController.swift in Sources */,
+				4CF2EDB92852D34D00845A61 /* SignInViewController.swift in Sources */,
 				4CC5986428533190009E85F9 /* Managers.swift in Sources */,
+				4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */,
 				4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */,
 				4CC5986028532AFB009E85F9 /* APIClient.swift in Sources */,
+				4CD2974128570AE000274F57 /* SampleData.swift in Sources */,
 				4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */,
-				4CF2EDEC2852DEC300845A61 /* SampleModel.swift in Sources */,
+				4CF2EDEC2852DEC300845A61 /* Data.swift in Sources */,
 				4CC5985C28532A12009E85F9 /* Constants.swift in Sources */,
-				4CC59862285330F8009E85F9 /* Extension.swift in Sources */,
+				4CC59862285330F8009E85F9 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

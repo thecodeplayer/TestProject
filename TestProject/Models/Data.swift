@@ -8,9 +8,9 @@
 import Foundation
 
 
-struct SampleModel: Codable {
-  let id: Int
-  let name: String
-  let age: String
-  let salary: Double
+struct Data: Codable {
+  let email: Int
+  let username: String
+  let phoneNumber: String
+  let password: Double
 }
