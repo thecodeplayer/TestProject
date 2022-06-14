@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import TTGSnackbar
 
 class SignInViewController: UIViewController {
 
@@ -43,21 +42,16 @@ class SignInViewController: UIViewController {
     //UITExtField Validations
     func validate() {
         do {
-            try emailTextField.validatedText(validationType: ValidatorType.email)
-            try passwordTextField.validatedText(validationType: ValidatorType.password)
-            showAlert(for: "Success")
+            let email = try emailTextField.validatedText(validationType: ValidatorType.email)
+            let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
+            UserDefaultsManager.shared.saveEmail(email: email)
+            CustomSnackBar.shared.showAlert(for: "Success \(UserDefaultsManager.shared.getEmail())")
+//            KeychainManager.shared.saveToken(token: "adjfhdnfn25362389hajfj")
+//            CustomSnackBar.shared.showAlert(for: "Success \(KeychainManager.shared.getToken())")
         } catch(let error) {
-            showAlert(for: (error as! ValidationError).message)
+            CustomSnackBar.shared.showAlert(for: (error as! ValidationError).message)
         }
     }
     
-    //For showing snackbar
-    func showAlert(for alert: String) {
-        let snackbar = TTGSnackbar(message: alert, duration: .long)
-
-        snackbar.icon = UIImage(named: "emoji_cool_small")
-
-        snackbar.show()
-    }
 }
 
