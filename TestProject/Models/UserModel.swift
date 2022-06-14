@@ -8,9 +8,9 @@
 import Foundation
 
 
-struct Data: Codable {
-  let email: Int
+struct UserModel: Codable {
+  let email: String
   let username: String
   let phoneNumber: String
-  let password: Double
+  let password: String
 }

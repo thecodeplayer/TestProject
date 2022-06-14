@@ -14,7 +14,6 @@
 		4CC59862285330F8009E85F9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59861285330F8009E85F9 /* Validation.swift */; };
 		4CC5986428533190009E85F9 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5986328533190009E85F9 /* Managers.swift */; };
 		4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2973E285709E800274F57 /* UITextField+Extensions.swift */; };
-		4CD2974128570AE000274F57 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2974028570AE000274F57 /* SampleData.swift */; };
 		4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB42852D34D00845A61 /* AppDelegate.swift */; };
 		4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */; };
 		4CF2EDB92852D34D00845A61 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB82852D34D00845A61 /* SignInViewController.swift */; };
@@ -25,7 +24,7 @@
 		4CF2EDD62852D34F00845A61 /* TestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDD52852D34F00845A61 /* TestProjectUITests.swift */; };
 		4CF2EDD82852D34F00845A61 /* TestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDD72852D34F00845A61 /* TestProjectUITestsLaunchTests.swift */; };
 		4CF2EDEA2852DA0D00845A61 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDE92852DA0D00845A61 /* Alamofire */; };
-		4CF2EDEC2852DEC300845A61 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDEB2852DEC300845A61 /* Data.swift */; };
+		4CF2EDEC2852DEC300845A61 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDEB2852DEC300845A61 /* UserModel.swift */; };
 		4CF2EDF12852F0E300845A61 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF02852F0E300845A61 /* MBProgressHUD */; };
 		4CF2EDF42852F1C000845A61 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF32852F1C000845A61 /* SwiftKeychainWrapper */; };
 		4CF2EDF72852F27B00845A61 /* TTGSnackbar in Frameworks */ = {isa = PBXBuildFile; productRef = 4CF2EDF62852F27B00845A61 /* TTGSnackbar */; };
@@ -56,7 +55,6 @@
 		4CC59861285330F8009E85F9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4CC5986328533190009E85F9 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
 		4CD2973E285709E800274F57 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		4CD2974028570AE000274F57 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		4CF2EDB12852D34D00845A61 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDB42852D34D00845A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +68,7 @@
 		4CF2EDD12852D34F00845A61 /* TestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDD52852D34F00845A61 /* TestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITests.swift; sourceTree = "<group>"; };
 		4CF2EDD72852D34F00845A61 /* TestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4CF2EDEB2852DEC300845A61 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4CF2EDEB2852DEC300845A61 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +185,7 @@
 		4CF2EDE52852D6B700845A61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4CF2EDEB2852DEC300845A61 /* Data.swift */,
-				4CD2974028570AE000274F57 /* SampleData.swift */,
+				4CF2EDEB2852DEC300845A61 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,9 +349,8 @@
 				4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */,
 				4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */,
 				4CC5986028532AFB009E85F9 /* APIClient.swift in Sources */,
-				4CD2974128570AE000274F57 /* SampleData.swift in Sources */,
 				4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */,
-				4CF2EDEC2852DEC300845A61 /* Data.swift in Sources */,
+				4CF2EDEC2852DEC300845A61 /* UserModel.swift in Sources */,
 				4CC5985C28532A12009E85F9 /* Constants.swift in Sources */,
 				4CC59862285330F8009E85F9 /* Validation.swift in Sources */,
 			);

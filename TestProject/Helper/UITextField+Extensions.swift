@@ -12,9 +12,7 @@ extension UITextField {
         let validator = ValidatorFactory.validatorFor(type: validationType)
         return try validator.validated(self.text!)
     }
-}
-
-extension UITextField {
+    
     func togglePasswordVisibility() {
         isSecureTextEntry = !isSecureTextEntry
 
