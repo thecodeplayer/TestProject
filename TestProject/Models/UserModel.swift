@@ -10,7 +10,5 @@ import Foundation
 
 struct UserModel: Codable {
   let email: String
-  let username: String
-  let phoneNumber: String
   let password: String
 }
