@@ -17,4 +17,5 @@ class AlertMessage: Error {
         self.title = title
         self.body = body
     }
+    
 }

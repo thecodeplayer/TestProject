@@ -44,8 +44,18 @@ class SignInViewController: UIViewController {
         do {
             let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
-            UserDefaultsManager.shared.saveEmail(email: email)
-            CustomSnackBar.shared.showAlert(for: "Success \(UserDefaultsManager.shared.getEmail())")
+            
+            let signIn = UserModel(email: email, password: password)
+            API.shared.signInUser(user: signIn, completionHandler: {
+                (isSuccess, message) in
+                if isSuccess {
+                    CustomSnackBar.shared.showAlert(for: message)
+                } else {
+                    CustomSnackBar.shared.showAlert(for: message)
+                }
+            })
+//            UserDefaultsManager.shared.saveEmail(email: email)
+//            CustomSnackBar.shared.showAlert(for: "Success \(UserDefaultsManager.shared.getEmail())")
 //            KeychainManager.shared.saveToken(token: "adjfhdnfn25362389hajfj")
 //            CustomSnackBar.shared.showAlert(for: "Success \(KeychainManager.shared.getToken())")
         } catch(let error) {

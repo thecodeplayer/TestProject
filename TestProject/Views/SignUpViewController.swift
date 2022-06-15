@@ -53,10 +53,20 @@ class SignUpViewController: UIViewController {
         do {
             try userPhotoImageView.image = nil
             try fullNameTextField.validatedText(validationType: ValidatorType.fullname)
-            try emailTextField.validatedText(validationType: ValidatorType.email)
+            let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             try phoneNumberTextField.validatedText(validationType: ValidatorType.phoneNumber)
-            try passwordTextField.validatedText(validationType: ValidatorType.password)
-            CustomSnackBar.shared.showAlert(for: "Success")
+            let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
+            
+            let signUp = UserModel(email: email, password: password)
+            API.shared.signUpUser(user: signUp, completionHandler: {
+                (isSuccess, message) in
+                if isSuccess {
+                    CustomSnackBar.shared.showAlert(for: message)
+                } else {
+                    CustomSnackBar.shared.showAlert(for: message)
+                }
+            })
+            
         } catch(let error) {
             CustomSnackBar.shared.showAlert(for: (error as! ValidationError).message)
         }
