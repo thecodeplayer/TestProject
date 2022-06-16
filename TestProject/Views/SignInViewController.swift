@@ -16,6 +16,10 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     let radius = 22
+    var response: Response?
+    var error: ErrorObject?
+    
+    private let signInPresenter = SignInPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,7 @@ class SignInViewController: UIViewController {
         emailTextField.layer.cornerRadius = CGFloat(radius)
         passwordTextField.layer.cornerRadius = CGFloat(radius)
         signInButton?.layer.cornerRadius = CGFloat(radius)
+        signInPresenter.delegate = self
         
     }
 
@@ -44,23 +49,31 @@ class SignInViewController: UIViewController {
         do {
             let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
-            
             let signIn = UserModel(email: email, password: password)
-            API.shared.signInUser(user: signIn, completionHandler: {
-                (isSuccess, message) in
-                if isSuccess {
-                    CustomSnackBar.shared.showAlert(for: message)
-                } else {
-                    CustomSnackBar.shared.showAlert(for: message)
-                }
-            })
-//            UserDefaultsManager.shared.saveEmail(email: email)
-//            CustomSnackBar.shared.showAlert(for: "Success \(UserDefaultsManager.shared.getEmail())")
-//            KeychainManager.shared.saveToken(token: "adjfhdnfn25362389hajfj")
-//            CustomSnackBar.shared.showAlert(for: "Success \(KeychainManager.shared.getToken())")
+            
+            signInPresenter.signInUser(params: signIn)
+            
+            if (response != nil){
+                UserDefaultsManager.shared.saveEmail(email: email)
+                KeychainManager.shared.saveToken(token: response!.token)
+                CustomSnackBar.shared.showAlert(for: "Welcome")
+            } else if (error != nil){
+                CustomSnackBar.shared.showAlert(for: "\(error!.error)")
+            }
         } catch(let error) {
             CustomSnackBar.shared.showAlert(for: (error as! ValidationError).message)
         }
+    }
+    
+}
+
+extension SignInViewController : SignInPresenterDelegate {
+    func signInResponse(response: Response) {
+        self.response = response
+    }
+    
+    func signInError(error: ErrorObject) {
+        self.error = error
     }
     
 }

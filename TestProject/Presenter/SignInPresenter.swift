@@ -1,32 +1,32 @@
 //
-//  SignUpPresenter.swift
+//  SignInPresenter.swift
 //  TestProject
 //
-//  Created by propelrr-mac-pro on 6/15/22.
+//  Created by propelrr-mac-pro on 6/16/22.
 //
 
 import Foundation
 import Alamofire
 
-protocol SignUpPresenterDelegate: AnyObject {
-    func signUpResponse(response: Response)
-    func signUpError(error: ErrorObject)
+protocol SignInPresenterDelegate: AnyObject {
+    func signInResponse(response: Response)
+    func signInError(error: ErrorObject)
 }
 
-class SignUpPresenter {
+class SignInPresenter {
     
     let apiManager = APIManager(sessionManager: Session())
-    weak var delegate: SignUpPresenterDelegate?
+    weak var delegate: SignInPresenterDelegate?
     
-    func signUpUser(params: UserModel) {
+    func signInUser(params: UserModel) {
         apiManager.call(type: EndPointItem.register, params: params as? Parameters, completionHandler: {
             (res: Swift.Result<Response, ErrorObject>) in
             switch res {
             case .success(let data):
-                self.delegate?.signUpResponse(response: data)
+                self.delegate?.signInResponse(response: data)
                 break
             case .failure(let error):
-                self.delegate?.signUpError(error: error)
+                self.delegate?.signInError(error: error)
                 break
             }
         })

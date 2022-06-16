@@ -8,17 +8,17 @@
 import Foundation
 import Alamofire
 
-enum EndpointItem {
+enum EndPointItem {
     
     case register
     
 }
 
-extension EndpointItem: EndPointType {
+extension EndPointItem: EndPointType {
     
     var baseURL: String {
-        switch APIManager.networkEnviroment {
-            case .feature: return "https://reqres.in/"
+        switch self {
+            default: return "https://reqres.in/"
         }
     }
     

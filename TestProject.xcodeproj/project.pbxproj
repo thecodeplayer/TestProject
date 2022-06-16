@@ -10,22 +10,20 @@
 		4C3046A82856E261000145C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3046A72856E261000145C5 /* SignUpViewController.swift */; };
 		4C3ABB50285860E000528FE7 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ABB4F285860E000528FE7 /* KeychainManager.swift */; };
 		4C3ABB5228586CBB00528FE7 /* CustomSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ABB5128586CBB00528FE7 /* CustomSnackBar.swift */; };
+		4C7D69F4285AB125000A23E0 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D69F3285AB125000A23E0 /* SignInPresenter.swift */; };
+		4C7D69F6285AB986000A23E0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D69F5285AB986000A23E0 /* Response.swift */; };
 		4CC59862285330F8009E85F9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59861285330F8009E85F9 /* Validation.swift */; };
-		4CC5986428533190009E85F9 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5986328533190009E85F9 /* Managers.swift */; };
-		4CCCB2E82859779600A29159 /* ErrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2E72859779600A29159 /* ErrorObject.swift */; };
+		4CC5986428533190009E85F9 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5986328533190009E85F9 /* TokenManager.swift */; };
 		4CCCB2EA2859780B00A29159 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2E92859780B00A29159 /* EndPointType.swift */; };
 		4CCCB2EC2859785200A29159 /* EndPointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2EB2859785200A29159 /* EndPointItem.swift */; };
 		4CCCB2EE2859795B00A29159 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2ED2859795B00A29159 /* APIManager.swift */; };
-		4CCCB2F02859799C00A29159 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2EF2859799C00A29159 /* NetworkEnvironment.swift */; };
-		4CCCB2F4285980AC00A29159 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2F3285980AC00A29159 /* AlertMessage.swift */; };
+		4CCCB2F4285980AC00A29159 /* ErrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2F3285980AC00A29159 /* ErrorObject.swift */; };
 		4CCCB2F62859851F00A29159 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2F52859851F00A29159 /* SignUpPresenter.swift */; };
 		4CCCB2F8285989CC00A29159 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2F7285989CC00A29159 /* Constants.swift */; };
-		4CCCB2FA28598D9700A29159 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB2F928598D9700A29159 /* NetworkError.swift */; };
 		4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2973E285709E800274F57 /* UITextField+Extensions.swift */; };
 		4CD5AF1E2858207100132508 /* CameraGalleryPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5AF1D2858207100132508 /* CameraGalleryPhotoManager.swift */; };
 		4CD5AF20285836B400132508 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5AF1F285836B400132508 /* UserDefaultsManager.swift */; };
 		4CE3B5762859AD790083B42C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3B5752859AD790083B42C /* UIViewController+Extensions.swift */; };
-		4CE3B5782859C3B40083B42C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3B5772859C3B40083B42C /* API.swift */; };
 		4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB42852D34D00845A61 /* AppDelegate.swift */; };
 		4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */; };
 		4CF2EDB92852D34D00845A61 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB82852D34D00845A61 /* SignInViewController.swift */; };
@@ -63,22 +61,20 @@
 		4C3046A72856E261000145C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4C3ABB4F285860E000528FE7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		4C3ABB5128586CBB00528FE7 /* CustomSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSnackBar.swift; sourceTree = "<group>"; };
+		4C7D69F3285AB125000A23E0 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		4C7D69F5285AB986000A23E0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		4CC59861285330F8009E85F9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		4CC5986328533190009E85F9 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
-		4CCCB2E72859779600A29159 /* ErrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObject.swift; sourceTree = "<group>"; };
+		4CC5986328533190009E85F9 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		4CCCB2E92859780B00A29159 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		4CCCB2EB2859785200A29159 /* EndPointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointItem.swift; sourceTree = "<group>"; };
 		4CCCB2ED2859795B00A29159 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		4CCCB2EF2859799C00A29159 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
-		4CCCB2F3285980AC00A29159 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		4CCCB2F3285980AC00A29159 /* ErrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObject.swift; sourceTree = "<group>"; };
 		4CCCB2F52859851F00A29159 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		4CCCB2F7285989CC00A29159 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4CCCB2F928598D9700A29159 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4CD2973E285709E800274F57 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		4CD5AF1D2858207100132508 /* CameraGalleryPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGalleryPhotoManager.swift; sourceTree = "<group>"; };
 		4CD5AF1F285836B400132508 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4CE3B5752859AD790083B42C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		4CE3B5772859C3B40083B42C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4CF2EDB12852D34D00845A61 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDB42852D34D00845A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4CCCB2F52859851F00A29159 /* SignUpPresenter.swift */,
+				4C7D69F3285AB125000A23E0 /* SignInPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -144,6 +141,7 @@
 		4CD5AF1C2858179000132508 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				4CC5986328533190009E85F9 /* TokenManager.swift */,
 				4CD5AF1D2858207100132508 /* CameraGalleryPhotoManager.swift */,
 				4CD5AF1F285836B400132508 /* UserDefaultsManager.swift */,
 				4C3ABB4F285860E000528FE7 /* KeychainManager.swift */,
@@ -186,7 +184,6 @@
 				4CF2EDBD2852D34F00845A61 /* Assets.xcassets */,
 				4CF2EDBF2852D34F00845A61 /* LaunchScreen.storyboard */,
 				4CF2EDC22852D34F00845A61 /* Info.plist */,
-				4CC5986328533190009E85F9 /* Managers.swift */,
 				4C3ABB5128586CBB00528FE7 /* CustomSnackBar.swift */,
 			);
 			path = TestProject;
@@ -212,14 +209,11 @@
 		4CF2EDE42852D4D900845A61 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				4CCCB2E72859779600A29159 /* ErrorObject.swift */,
 				4CCCB2E92859780B00A29159 /* EndPointType.swift */,
 				4CCCB2EB2859785200A29159 /* EndPointItem.swift */,
 				4CCCB2ED2859795B00A29159 /* APIManager.swift */,
-				4CCCB2EF2859799C00A29159 /* NetworkEnvironment.swift */,
-				4CCCB2F3285980AC00A29159 /* AlertMessage.swift */,
-				4CCCB2F928598D9700A29159 /* NetworkError.swift */,
-				4CE3B5772859C3B40083B42C /* API.swift */,
+				4CCCB2F3285980AC00A29159 /* ErrorObject.swift */,
+				4C7D69F5285AB986000A23E0 /* Response.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -386,29 +380,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7D69F4285AB125000A23E0 /* SignInPresenter.swift in Sources */,
 				4CCCB2EE2859795B00A29159 /* APIManager.swift in Sources */,
 				4CD5AF20285836B400132508 /* UserDefaultsManager.swift in Sources */,
-				4CCCB2E82859779600A29159 /* ErrorObject.swift in Sources */,
 				4C3046A82856E261000145C5 /* SignUpViewController.swift in Sources */,
 				4CF2EDB92852D34D00845A61 /* SignInViewController.swift in Sources */,
-				4CC5986428533190009E85F9 /* Managers.swift in Sources */,
+				4CC5986428533190009E85F9 /* TokenManager.swift in Sources */,
 				4CE3B5762859AD790083B42C /* UIViewController+Extensions.swift in Sources */,
 				4CCCB2F62859851F00A29159 /* SignUpPresenter.swift in Sources */,
 				4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */,
 				4CCCB2EA2859780B00A29159 /* EndPointType.swift in Sources */,
 				4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */,
 				4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */,
-				4CCCB2F4285980AC00A29159 /* AlertMessage.swift in Sources */,
-				4CCCB2F02859799C00A29159 /* NetworkEnvironment.swift in Sources */,
+				4CCCB2F4285980AC00A29159 /* ErrorObject.swift in Sources */,
 				4C3ABB50285860E000528FE7 /* KeychainManager.swift in Sources */,
-				4CE3B5782859C3B40083B42C /* API.swift in Sources */,
 				4CD5AF1E2858207100132508 /* CameraGalleryPhotoManager.swift in Sources */,
-				4CCCB2FA28598D9700A29159 /* NetworkError.swift in Sources */,
 				4CCCB2F8285989CC00A29159 /* Constants.swift in Sources */,
 				4CF2EDEC2852DEC300845A61 /* UserModel.swift in Sources */,
 				4C3ABB5228586CBB00528FE7 /* CustomSnackBar.swift in Sources */,
 				4CCCB2EC2859785200A29159 /* EndPointItem.swift in Sources */,
 				4CC59862285330F8009E85F9 /* Validation.swift in Sources */,
+				4C7D69F6285AB986000A23E0 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

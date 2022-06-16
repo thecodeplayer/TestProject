@@ -11,33 +11,43 @@ import Alamofire
 class APIManager {
     
     private let sessionManager: Session
-    static let networkEnviroment: NetworkEnvironment = .feature
     
     init(sessionManager: Session) {
         self.sessionManager = sessionManager
     }
     
-    func call(type: EndPointType, params: Parameters? = nil, handler: @escaping (()?, _ error: AlertMessage?)->()) {
+    func call(type: EndPointType, params: Parameters? = nil, completionHandler: @escaping (Swift.Result<Response, ErrorObject>) -> Void) {
         self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
                                     encoding: type.encoding,
-                                    headers: type.headers).validate().responseJSON { data in
-            switch data.result {
+                                    headers: type.headers).validate().response { response in
+            switch response.result {
             case .success(_):
-                handler((), nil)
-                break
+                switch response.response?.statusCode {
+                case 200:
+                    do {
+                        guard let data = response.data else { return }
+                        let json = try JSONDecoder().decode(Response.self, from: data)
+                        completionHandler(.success(json))
+                    } catch {
+                        debugPrint("Error: \(error)")
+                    }
+                    break
+                default:
+                    debugPrint(response)
+                }
             case .failure(_):
-                handler(nil, self.parseApiError(data: data.data))
+                completionHandler(.failure(self.parseApiError(data: response.data)))
                 break
             }
         }
     }
-    private func parseApiError(data: Data?) -> AlertMessage {
-        let decoder = JSONDecoder()
-        if let jsonData = data, let error = try? decoder.decode(NetworkError.self, from: jsonData) {
-            return AlertMessage(title: Constants.errorAlertTitle, body: error.key ?? error.message)
+    private func parseApiError(data: Data?) -> ErrorObject {
+            let decoder = JSONDecoder()
+            if let jsonData = data, let error = try? decoder.decode(ErrorObject.self, from: jsonData) {
+                return ErrorObject(error: error.error)
+            }
+            return ErrorObject(error: "Unknown Error")
         }
-        return AlertMessage(title: Constants.errorAlertTitle, body: Constants.genericErrorMessage)
     }
-}
