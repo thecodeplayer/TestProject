@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     let radius = 22
-    var response: Response?
+    var response: ResponseModel?
     var error: ErrorObject?
     
     private let signInPresenter = SignInPresenter()
@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
     
     //Onclick
     @IBAction func signInValidation(_ sender: Any) {
-//        validate()
+        validate()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homePageViewController = storyBoard.instantiateViewController(withIdentifier: "HomePage") as! HomePageViewController
         self.present(homePageViewController, animated: true, completion: nil)
@@ -52,7 +52,7 @@ class SignInViewController: UIViewController {
         do {
             let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
-            let signIn = UserModel(email: email, password: password)
+            let signIn = LoginModel(email: email, password: password)
             
             signInPresenter.signInUser(params: signIn)
             
@@ -71,7 +71,7 @@ class SignInViewController: UIViewController {
 }
 
 extension SignInViewController : SignInPresenterDelegate {
-    func signInResponse(response: Response) {
+    func signInResponse(response: ResponseModel?) {
         self.response = response
     }
     

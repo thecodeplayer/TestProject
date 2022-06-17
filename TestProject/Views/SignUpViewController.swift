@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     
     
     let radius = 22
-    var response: Response?
+    var response: ResponseModel?
     var error: ErrorObject?
     
     private let signUpPresenter = SignUpPresenter()
@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController {
             try phoneNumberTextField.validatedText(validationType: ValidatorType.phoneNumber)
             let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
             
-            let signUp = UserModel(email: email, password: password)
+            let signUp = LoginModel(email: email, password: password)
             signUpPresenter.signUpUser(params: signUp)
             
             if (response != nil){
@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: SignUpPresenterDelegate {
-    func signUpResponse(response: Response) {
+    func signUpResponse(response: ResponseModel?) {
         self.response = response
     }
     

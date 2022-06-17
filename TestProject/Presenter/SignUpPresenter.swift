@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 protocol SignUpPresenterDelegate: AnyObject {
-    func signUpResponse(response: Response)
+    func signUpResponse(response: ResponseModel?)
     func signUpError(error: ErrorObject)
 }
 
@@ -18,9 +18,9 @@ class SignUpPresenter {
     let apiManager = APIManager(sessionManager: Session())
     weak var delegate: SignUpPresenterDelegate?
     
-    func signUpUser(params: UserModel) {
+    func signUpUser(params: LoginModel) {
         apiManager.call(type: EndPointItem.register, params: params as? Parameters, completionHandler: {
-            (res: Swift.Result<Response, ErrorObject>) in
+            (res: Swift.Result<ResponseModel?, ErrorObject>) in
             switch res {
             case .success(let data):
                 self.delegate?.signUpResponse(response: data)

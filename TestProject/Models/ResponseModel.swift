@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Response: Decodable {
+struct ResponseModel: Codable {
     
     var id: Int
     var token: String

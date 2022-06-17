@@ -16,7 +16,7 @@ class APIManager {
         self.sessionManager = sessionManager
     }
     
-    func call(type: EndPointType, params: Parameters? = nil, completionHandler: @escaping (Swift.Result<Response, ErrorObject>) -> Void) {
+    func call<T>(type: EndPointType, params: Parameters? = nil, completionHandler: @escaping (Swift.Result<T?, ErrorObject>) -> ()) where T: Codable{
         self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
@@ -28,7 +28,7 @@ class APIManager {
                 case 200:
                     do {
                         guard let data = response.data else { return }
-                        let json = try JSONDecoder().decode(Response.self, from: data)
+                        let json = try JSONDecoder().decode(T.self, from: data)
                         completionHandler(.success(json))
                     } catch {
                         debugPrint("Error: \(error)")

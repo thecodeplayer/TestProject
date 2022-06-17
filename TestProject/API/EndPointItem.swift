@@ -11,6 +11,7 @@ import Alamofire
 enum EndPointItem {
     
     case register
+    case users
     
 }
 
@@ -18,7 +19,7 @@ extension EndPointItem: EndPointType {
     
     var baseURL: String {
         switch self {
-            default: return "https://reqres.in/"
+        default: return "https://reqres.in/"
         }
     }
     
@@ -26,6 +27,8 @@ extension EndPointItem: EndPointType {
         switch self {
         case .register:
             return "api/register"
+        case .users:
+            return "api/users"
         }
     }
     
@@ -33,6 +36,8 @@ extension EndPointItem: EndPointType {
         switch self {
         case .register:
             return .post
+        case .users:
+            return .get
         default:
             return .get
         }
@@ -40,7 +45,11 @@ extension EndPointItem: EndPointType {
     
     var headers: HTTPHeaders? {
         switch self {
-    case .register:
+        case .register:
+            return ["Content-Type": "application/json",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "x-access-token": "someToken"]
+        case .users:
             return ["Content-Type": "application/json",
                     "X-Requested-With": "XMLHttpRequest",
                     "x-access-token": "someToken"]
