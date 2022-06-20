@@ -300,7 +300,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bpm-Md-NFE"/>
                     <connections>
-                        <segue destination="bWX-4b-Oxh" kind="show" identifier="Details" id="Glq-Ee-3mA"/>
+                        <segue destination="bWX-4b-Oxh" kind="show" id="vyz-56-xnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uST-tr-LwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -310,7 +310,7 @@
         <!--Details View Controller-->
         <scene sceneID="7F5-Ke-CNw">
             <objects>
-                <viewController id="bWX-4b-Oxh" customClass="DetailsViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWX-4b-Oxh" customClass="DetailsViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rVv-jb-HoC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
