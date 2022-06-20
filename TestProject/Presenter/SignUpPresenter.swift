@@ -19,7 +19,7 @@ class SignUpPresenter {
     weak var delegate: SignUpPresenterDelegate?
     
     func signUpUser(params: LoginModel) {
-        apiManager.call(type: EndPointItem.register, params: params as? Parameters, completionHandler: {
+        apiManager.call(type: EndPointItem.register, params: params as? Parameters, path: "api/register", completionHandler: {
             (res: Swift.Result<ResponseModel?, ErrorObject>) in
             switch res {
             case .success(let data):

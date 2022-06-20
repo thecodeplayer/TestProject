@@ -16,8 +16,8 @@ class APIManager {
         self.sessionManager = sessionManager
     }
     
-    func call<T>(type: EndPointType, params: Parameters? = nil, completionHandler: @escaping (Swift.Result<T?, ErrorObject>) -> ()) where T: Codable{
-        self.sessionManager.request(type.url,
+    func call<T>(type: EndPointType, params: Parameters? = nil,  path: String, completionHandler: @escaping (Swift.Result<T?, ErrorObject>) -> ()) where T: Codable{
+        self.sessionManager.request(URL(string: "\(type.url)\(path)")!,
                                     method: type.httpMethod,
                                     parameters: params,
                                     encoding: type.encoding,

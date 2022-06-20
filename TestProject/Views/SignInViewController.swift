@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
     
     //Onclick
     @IBAction func signInValidation(_ sender: Any) {
-        validate()
+//        validate()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homePageViewController = storyBoard.instantiateViewController(withIdentifier: "HomePage") as! HomePageViewController
         self.present(homePageViewController, animated: true, completion: nil)

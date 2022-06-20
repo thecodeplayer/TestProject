@@ -28,6 +28,9 @@
 		4CD2973F285709E800274F57 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2973E285709E800274F57 /* UITextField+Extensions.swift */; };
 		4CD5AF1E2858207100132508 /* CameraGalleryPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5AF1D2858207100132508 /* CameraGalleryPhotoManager.swift */; };
 		4CD5AF20285836B400132508 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5AF1F285836B400132508 /* UserDefaultsManager.swift */; };
+		4CD5DBC32860449E009D0574 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5DBC22860449E009D0574 /* DetailsPresenter.swift */; };
+		4CD5DBC5286052BE009D0574 /* UserDetailsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5DBC4286052BE009D0574 /* UserDetailsResponseModel.swift */; };
+		4CD5DBC828606B60009D0574 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD5DBC728606B60009D0574 /* AlamofireImage */; };
 		4CE3B5762859AD790083B42C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3B5752859AD790083B42C /* UIViewController+Extensions.swift */; };
 		4CF2EDB52852D34D00845A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB42852D34D00845A61 /* AppDelegate.swift */; };
 		4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2EDB62852D34D00845A61 /* SceneDelegate.swift */; };
@@ -84,6 +87,8 @@
 		4CD2973E285709E800274F57 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		4CD5AF1D2858207100132508 /* CameraGalleryPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGalleryPhotoManager.swift; sourceTree = "<group>"; };
 		4CD5AF1F285836B400132508 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		4CD5DBC22860449E009D0574 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		4CD5DBC4286052BE009D0574 /* UserDetailsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsResponseModel.swift; sourceTree = "<group>"; };
 		4CE3B5752859AD790083B42C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4CF2EDB12852D34D00845A61 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF2EDB42852D34D00845A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 			files = (
 				4CF2EDF12852F0E300845A61 /* MBProgressHUD in Frameworks */,
 				4CF2EDEA2852DA0D00845A61 /* Alamofire in Frameworks */,
+				4CD5DBC828606B60009D0574 /* AlamofireImage in Frameworks */,
 				4CF2EDF42852F1C000845A61 /* SwiftKeychainWrapper in Frameworks */,
 				4CF2EDF72852F27B00845A61 /* TTGSnackbar in Frameworks */,
 			);
@@ -136,6 +142,7 @@
 				4CCCB2F52859851F00A29159 /* SignUpPresenter.swift */,
 				4C7D69F3285AB125000A23E0 /* SignInPresenter.swift */,
 				4C4F956B285C163B00BDB6A1 /* HomePagePresenter.swift */,
+				4CD5DBC22860449E009D0574 /* DetailsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 				4C7D69F5285AB986000A23E0 /* ResponseModel.swift */,
 				4C4F9569285C0AC000BDB6A1 /* UsersResponseModel.swift */,
 				4C4F956D285C1DCA00BDB6A1 /* UserModel.swift */,
+				4CD5DBC4286052BE009D0574 /* UserDetailsResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 				4CF2EDF02852F0E300845A61 /* MBProgressHUD */,
 				4CF2EDF32852F1C000845A61 /* SwiftKeychainWrapper */,
 				4CF2EDF62852F27B00845A61 /* TTGSnackbar */,
+				4CD5DBC728606B60009D0574 /* AlamofireImage */,
 			);
 			productName = TestProject;
 			productReference = 4CF2EDB12852D34D00845A61 /* TestProject.app */;
@@ -351,6 +360,7 @@
 				4CF2EDEF2852F0E300845A61 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 				4CF2EDF22852F1C000845A61 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				4CF2EDF52852F27B00845A61 /* XCRemoteSwiftPackageReference "TTGSnackbar" */,
+				4CD5DBC628606B60009D0574 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 4CF2EDB22852D34D00845A61 /* Products */;
 			projectDirPath = "";
@@ -412,6 +422,7 @@
 				4CF2EDB72852D34D00845A61 /* SceneDelegate.swift in Sources */,
 				4CCCB2F4285980AC00A29159 /* ErrorObject.swift in Sources */,
 				4C3ABB50285860E000528FE7 /* KeychainManager.swift in Sources */,
+				4CD5DBC32860449E009D0574 /* DetailsPresenter.swift in Sources */,
 				4CD5AF1E2858207100132508 /* CameraGalleryPhotoManager.swift in Sources */,
 				4CCCB2F8285989CC00A29159 /* Constants.swift in Sources */,
 				4CF2EDEC2852DEC300845A61 /* LoginModel.swift in Sources */,
@@ -420,6 +431,7 @@
 				4CCCB2EC2859785200A29159 /* EndPointItem.swift in Sources */,
 				4CC59862285330F8009E85F9 /* Validation.swift in Sources */,
 				4C7D69F6285AB986000A23E0 /* ResponseModel.swift in Sources */,
+				4CD5DBC5286052BE009D0574 /* UserDetailsResponseModel.swift in Sources */,
 				4C4F956A285C0AC000BDB6A1 /* UsersResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,6 +770,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4CD5DBC628606B60009D0574 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		4CF2EDE82852DA0D00845A61 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -793,6 +813,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4CD5DBC728606B60009D0574 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CD5DBC628606B60009D0574 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		4CF2EDE92852DA0D00845A61 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4CF2EDE82852DA0D00845A61 /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomePageViewController: UIViewController {
     
     var users: [UserModel] = []
     var error: ErrorObject?
@@ -24,21 +24,37 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        homePagePresenter.delegate = self
 
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         
+        homePagePresenter.setViewDelegate(delegate: self)
         homePagePresenter.getUsers()
-        
-//        debugPrint("Users: \(users)")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
+    
+}
+
+extension HomePageViewController: HomePagePresenterDelegate {
+    func presentUsers(users: [UserModel]) {
+        shouldHideLoader(isHidden: false, vc: self.view)
+        self.users = users
+        self.tableView.reloadData()
+        shouldHideLoader(isHidden: true, vc: self.view)
+    }
+    
+    func errorFetching(error: ErrorObject) {
+        self.error = error
+    }
+    
+}
+
+extension HomePageViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -57,26 +73,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Details", sender: self.tableView)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard let destinationVC = segue.destination as? DetailsViewController else {
-        return
-      }
-      destinationVC.users = selectedUser
-    }
-    
-}
-
-extension HomePageViewController: HomePagePresenterDelegate {
-    func presentUsers(users: [UserModel]) {
-        self.users = users
-        self.tableView.reloadData()
-    }
-    
-    func errorFetching(error: ErrorObject) {
-        self.error = error
+        homePagePresenter.userTap(userId: selectedUser!.id, controller: self)
     }
     
 }
