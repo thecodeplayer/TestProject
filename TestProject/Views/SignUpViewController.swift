@@ -20,6 +20,10 @@ class SignUpViewController: UIViewController {
     
     
     let radius = 22
+    var response: ResponseModel?
+    var error: ErrorObject?
+    
+    private let signUpPresenter = SignUpPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,7 @@ class SignUpViewController: UIViewController {
         phoneNumberTextField.layer.cornerRadius = CGFloat(radius)
         passwordTextField.layer.cornerRadius = CGFloat(radius)
         userPhotoImageView.layer.cornerRadius = 64
+        self.signUpPresenter.delegate = self
         
     }
     
@@ -40,9 +45,6 @@ class SignUpViewController: UIViewController {
     
     //To sign in screen
     @IBAction func goToSignIn(_ sender: Any) {
-        //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let signInViewController = storyBoard.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
-        //        self.present(signInViewController, animated: true, completion: nil)
         // VC not popping
         navigationController?.popViewController(animated: true)
         
@@ -53,10 +55,18 @@ class SignUpViewController: UIViewController {
         do {
             try userPhotoImageView.image = nil
             try fullNameTextField.validatedText(validationType: ValidatorType.fullname)
-            try emailTextField.validatedText(validationType: ValidatorType.email)
+            let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             try phoneNumberTextField.validatedText(validationType: ValidatorType.phoneNumber)
-            try passwordTextField.validatedText(validationType: ValidatorType.password)
-            CustomSnackBar.shared.showAlert(for: "Success")
+            let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
+            
+            let signUp = LoginModel(email: email, password: password)
+            signUpPresenter.signUpUser(params: signUp)
+            
+            if (response != nil){
+                CustomSnackBar.shared.showAlert(for: "Welcome")
+            } else if (error != nil){
+                CustomSnackBar.shared.showAlert(for: "\(error!.error)")
+            }
         } catch(let error) {
             CustomSnackBar.shared.showAlert(for: (error as! ValidationError).message)
         }
@@ -71,5 +81,16 @@ class SignUpViewController: UIViewController {
             self.userPhotoImageView.image = image
         }
     }
+}
+
+extension SignUpViewController: SignUpPresenterDelegate {
+    func signUpResponse(response: ResponseModel?) {
+        self.response = response
+    }
+    
+    func signUpError(error: ErrorObject) {
+        self.error = error
+    }
+    
     
 }
