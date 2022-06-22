@@ -13,7 +13,9 @@ enum EndPointItem {
     case login
     case register
     case users
-    case user
+    case get_user
+    case update_user
+    case delete_user
     
 }
 
@@ -33,14 +35,18 @@ extension EndPointItem: EndPointType {
             return .post
         case .users:
             return .get
-        case .user:
+        case .get_user:
             return .get
+        case .update_user:
+            return .put
+        case .delete_user:
+            return .delete
         }
     }
     
     var headers: HTTPHeaders? {
         switch self {
-        case .login, .register, .users, .user:
+        case .login, .register, .users, .get_user, .update_user, .delete_user:
             return ["Content-Type": "application/json",
                     "X-Requested-With": "XMLHttpRequest",
                     "x-access-token": "someToken"]

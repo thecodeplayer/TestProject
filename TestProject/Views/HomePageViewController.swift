@@ -41,6 +41,10 @@ class HomePageViewController: UIViewController {
 }
 
 extension HomePageViewController: HomePagePresenterDelegate {
+    func userDelete(deleted: UserDeleteResponseModel?) {
+        debugPrint("Deleted")
+    }
+    
     func presentUsers(users: [UserModel]) {
         shouldHideLoader(isHidden: false, vc: self.view)
         self.users = users
