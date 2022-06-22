@@ -12,6 +12,7 @@ import UIKit
 protocol HomePagePresenterDelegate: AnyObject {
     func presentUsers(users: [UserModel])
     func errorFetching(error: ErrorObject)
+    func userDelete(deleted: UserDeleteResponseModel?)
 }
 
 typealias PresenterDelegate = HomePagePresenterDelegate & UIViewController
@@ -34,6 +35,20 @@ class HomePagePresenter {
         })
     }
     
+    func deleteUser(userId: Int) {
+        apiManager.call(type: EndPointItem.delete_user, path: "api/users/\(userId)", completionHandler: {
+            (res:Swift.Result<UserDeleteResponseModel?, ErrorObject>) in
+            switch res {
+            case .success(let user):
+                self.delegate?.userDelete(deleted: user)
+                break
+            case .failure(let error):
+                self.delegate?.errorFetching(error: error)
+                break
+            }
+        })
+    }
+    
     func setViewDelegate(delegate: PresenterDelegate) {
         self.delegate = delegate
     }
@@ -46,7 +61,10 @@ class HomePagePresenter {
             detailsViewController.userId = userId
             controller.present(detailsViewController, animated: true, completion: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: nil ))
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
+            self.deleteUser(userId: userId)
+            CustomSnackBar.shared.showAlert(for: "Deleted Successfully!")
+        } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         delegate?.present(alert, animated: true)
     }

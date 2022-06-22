@@ -27,6 +27,7 @@ enum ValidatorType {
     case username
     case fullname
     case phoneNumber
+    case job
 }
 
 enum ValidatorFactory {
@@ -37,6 +38,7 @@ enum ValidatorFactory {
         case .username: return UserNameValidator()
         case .fullname: return FullNameValidator()
         case .phoneNumber: return PhoneNumberValidator()
+        case .job: return JobValidator()
         }
     }
 }
@@ -108,6 +110,15 @@ struct PhoneNumberValidator: ValidatorConvertible {
     func validated(_ value: String) throws -> String {
         guard value != "" else {
             throw ValidationError("Phone Number is Required")
+        }
+        return value
+    }
+}
+
+struct JobValidator: ValidatorConvertible {
+    func validated(_ value: String) throws -> String {
+        guard value != "" else {
+            throw ValidationError("Job is Required")
         }
         return value
     }
